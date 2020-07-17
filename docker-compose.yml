@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejsapp
+    container_name: nodejs21 
+    ports:
+      - "5000:7000"
+    volumes:
+      - ./home
+      - ./home/node/app
+    command: /bin/bash -c "node /usr/src/app/gata/Nodejsapp/context/express.js"
+
+     
